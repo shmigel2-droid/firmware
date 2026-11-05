@@ -69,3 +69,10 @@ BR2_PACKAGE_OPUS_OPENIPC=y
 BR2_PACKAGE_OPUS_OPENIPC_FIXED_POINT=y
 BR2_PACKAGE_VTUND_OPENIPC=y
 BR2_PACKAGE_YAML_CLI=y
+# Активація аналогового відеовходу CVBS на п'ятаку TP5 замість мікрофона
+&acodec { status = "disabled"; };
+&rv1103_tvdecoder { status = "okay"; rockchip,adc-ch = <1>; };
+&vcc_cvbs { status = "okay"; };
+
+# Наказуємо Buildroot зберегти окремі образи компонентів у вихідну папку
+BR2_PACKAGE_HOST_GENIMAGE=y
